@@ -7,7 +7,18 @@ namespace LinkedList
     {
         public bool IsCircular<T>(LinkedList<T> linkedList)
         {
-            throw new NotImplementedException();
+            LinkedListNode<T> node = linkedList.First;
+            int iterationCounter = 0;
+            
+            while(node.Next != null && iterationCounter < linkedList.Count)
+            {
+                iterationCounter++;
+            }
+            if (iterationCounter < linkedList.Count)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
